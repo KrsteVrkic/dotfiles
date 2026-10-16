@@ -1,0 +1,36 @@
+;; -*- lexical-binding: t; -*
+(setq warning-suppress-types
+      (append warning-suppress-types
+              '((files missing-lexbind-cookie))))
+(require 'smex)
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/")
+             t)
+(package-initialize)
+(smex-initialize)
+
+(global-set-key (kbd "M-x") #'smex)
+(global-set-key (kbd "M-X") #'smex-major-mode-commands)
+
+(setq ring-bell-function 'ignore)
+(setq display-line-numbers-type 'relative)
+(setq inhibit-startup-screen t)
+(setq ido-enable-flex-matching t
+      ido-everywhere t
+      ido-use-virtual-buffers t)
+(setq custom-file (expand-file-name "~/dotfiles/emacs/emacs-custom.el"))
+(load custom-file)
+
+(load-theme 'gruber-darker t)
+(add-to-list 'default-frame-alist `(font . "Iosevka-20"))
+
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+(scroll-bar-mode -1)
+(global-display-line-numbers-mode 1)
+(delete-selection-mode 1)
+(ido-mode 1)
+
+(require 'move-text)
+(move-text-default-bindings)
