@@ -13,7 +13,7 @@ export SUDO_EDITOR=emacs
 
 ASCII_DIR="$HOME/dotfiles/bash/ascii"
 
-if [[ $- == *i* && -d "$ASCII_DIR" && "$TERM" != "linux" ]]; then
+if [[ $- == *i* && -d "$ASCII_DIR" && "$TERM" == "xterm-kitty" ]]; then
     find "$ASCII_DIR" -maxdepth 1 -type f -name '*.txt' |
         sort |
         shuf -n 1 |
