@@ -1,13 +1,14 @@
-;; -*- lexical-binding: t; -*
+;; -*- lexical-binding: t; -*-
 (setq warning-suppress-types
       (append warning-suppress-types
               '((files missing-lexbind-cookie))))
-(require 'smex)
 (require 'package)
+
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/")
              t)
 (package-initialize)
+(require 'smex)
 (smex-initialize)
 
 (global-set-key (kbd "M-x") #'smex)
