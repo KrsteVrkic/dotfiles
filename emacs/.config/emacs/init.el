@@ -1,12 +1,12 @@
 ;; -*- lexical-binding: t; -*-
 (setq warning-suppress-types
       (append warning-suppress-types
-              '((files missing-lexbind-cookie))))
+	      '((files missing-lexbind-cookie))))
 (require 'package)
 
 (add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/")
-             t)
+	     '("melpa" . "https://melpa.org/packages/")
+	     t)
 (package-initialize)
 (require 'smex)
 (smex-initialize)
@@ -35,3 +35,6 @@
 
 (require 'move-text)
 (move-text-default-bindings)
+
+(add-hook 'prog-mode-hook #'indent-bars-mode)
+(add-hook 'after-init-hook #'global-flycheck-mode)
