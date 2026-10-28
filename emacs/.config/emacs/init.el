@@ -24,6 +24,9 @@
 (load custom-file)
 
 (load-theme 'gruber-darker t)
+(set-face-foreground 'font-lock-builtin-face "#6368f8")
+(set-face-foreground 'font-lock-variable-name-face "#6368f8")
+(set-face-foreground 'font-lock-doc-face "#6368f8")
 (set-face-foreground 'font-lock-type-face "#6368f8")
 (set-face-foreground 'font-lock-constant-face "#6368f8")
 (set-face-foreground 'font-lock-preprocessor-face "#6368f8")
