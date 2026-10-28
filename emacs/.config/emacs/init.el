@@ -24,6 +24,9 @@
 (load custom-file)
 
 (load-theme 'gruber-darker t)
+(set-face-foreground 'font-lock-type-face "#6368f8")
+(set-face-foreground 'font-lock-constant-face "#6368f8")
+(set-face-foreground 'font-lock-preprocessor-face "#6368f8")
 (add-to-list 'default-frame-alist `(font . "Iosevka-20"))
 
 (tool-bar-mode -1)
