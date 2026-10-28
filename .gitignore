@@ -1,1 +1,7 @@
+# Emacs backup files
 *~
+\#*\#
+.\#*
+
+# Emacs autosave files
+auto-save-list/

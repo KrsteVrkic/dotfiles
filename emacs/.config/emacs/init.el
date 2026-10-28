@@ -31,7 +31,7 @@
 (set-face-foreground 'font-lock-type-face aether-blue)
 (set-face-foreground 'font-lock-constant-face aether-blue)
 (set-face-foreground 'font-lock-preprocessor-face aether-blue)
-(add-to-list 'default-frame-alist `(font . "Iosevka-18))
+(add-to-list 'default-frame-alist `(font . "Iosevka-18"))
 
 (tool-bar-mode -1)
 (menu-bar-mode -1)
