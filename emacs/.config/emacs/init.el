@@ -71,7 +71,7 @@
   ((t (:inherit eglot-inlay-hint-face
 		:foreground "#b4a1c8"))))
  '(eglot-inlay-hint-face
-  ((t (:foreground "#b4a1c8" :height 1.0))))
+   ((t (:foreground "#b4a1c8" :height 1.0))))
  ;; Macros inherit the pink preprocessor colour
 )
 
