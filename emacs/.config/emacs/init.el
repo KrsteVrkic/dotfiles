@@ -44,4 +44,6 @@
 (move-text-default-bindings)
 
 (add-hook 'prog-mode-hook #'indent-bars-mode)
-(add-hook 'after-init-hook #'global-flycheck-mode)
+;; C/C++ language server
+(add-hook 'c++-mode-hook #'eglot-ensure)
+(add-hook 'c-mode-hook #'eglot-ensure)
