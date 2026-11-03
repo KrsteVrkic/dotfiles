@@ -30,53 +30,68 @@
 (load custom-file)
 
 (load-theme 'gruber-darker t)
+;; Font
+(add-to-list 'default-frame-alist `(font . "Iosevka-18"))
 
+;; Font Face Block
 (setq aether-blue "#6368f8")
 
 (set-face-foreground 'font-lock-function-name-face aether-blue)
 (set-face-foreground 'font-lock-variable-name-face "#94a4c6")
+(set-face-foreground 'font-lock-type-face aether-blue)
+(set-face-foreground 'font-lock-builtin-face aether-blue)
 
-;; Preprocessor and macros: muted pink
+;; Preprocessor and macros
 (set-face-foreground 'font-lock-preprocessor-face "#e4a0a8")
 
-;; Font
-(add-to-list 'default-frame-alist `(font . "Iosevka-18"))
+;; Reset previous defaultLibrary customization
+(face-spec-reset-face 'eglot-semantic-defaultLibrary)
 
-;; Eglot semantic highlighting
 (custom-set-faces
+ ;; Variables
  '(eglot-semantic-variable
    ((t (:foreground "#94a4c6" :weight normal))))
- '(eglot-semantic-function
-  ((t (:foreground "#6368f8" :weight normal))))
 
+ ;; Functions
+ '(eglot-semantic-function
+   ((t (:foreground "#6368f8" :weight normal))))
+
+ ;; Operators
+ '(eglot-semantic-operator
+   ((t (:foreground "#e2e1ee" :weight normal))))
+
+ ;; Struct fields and properties
  '(eglot-semantic-property
    ((t (:foreground "#95a99f" :weight normal))))
 
- ;; Prevent declarations and definitions inheriting function colours
+ ;; Classes and types
+ '(eglot-semantic-class
+   ((t (:foreground "#6368f8" :weight normal))))
+
+ ;; Preserve the underlying token colour for declarations
  '(eglot-semantic-declaration
    ((t (:inherit nil))))
 
  '(eglot-semantic-definition
    ((t (:inherit nil))))
 
- ;; Enum members: muted purple
+ ;; Enum members
  '(eglot-semantic-enumMember
    ((t (:inherit nil :foreground "#b4a1c8" :weight normal))))
 
- ;; Remove inherited constant colouring from readonly tokens
+ ;; Readonly modifier
  '(eglot-semantic-readonly
    ((t (:inherit nil))))
 
+ ;; Inlay hints
  '(eglot-parameter-hint-face
-  ((t (:inherit eglot-inlay-hint-face
-		:foreground "#b4a1c8"))))
+   ((t (:inherit eglot-inlay-hint-face
+        :foreground "#b4a1c8"))))
+
  '(eglot-inlay-hint-face
    ((t (:foreground "#b4a1c8" :height 1.0))))
- ;; Macros inherit the pink preprocessor colour
-)
+ )
 
-;; Remove the defaultLibrary face override
-(face-spec-reset-face 'eglot-semantic-defaultLibrary)
 
 (tool-bar-mode -1)
 (menu-bar-mode -1)
